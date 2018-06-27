@@ -12,3 +12,5 @@ from .stops import Stops
 from .query_params import QueryParams
 from .invalid_request_error import InvalidRequestError
 from .access_denied_error import AccessDeniedError
+from .not_found_error import NotFoundError
+from .unknown_error import UnknownError

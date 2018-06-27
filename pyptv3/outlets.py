@@ -10,4 +10,4 @@ class Outlets:
 
     def by_location(self, latitude, longitude, **kwargs):
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
-        return self._client.get("/outlets/" + latitude + "," + longitude, query_list)
+        return self._client.get("/outlets/location/" + str(latitude) + "," + str(longitude), query_list)

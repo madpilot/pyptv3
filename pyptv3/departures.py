@@ -12,7 +12,7 @@ class Departures:
 
     def by_route(self, route, **kwargs):
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
-        return self._client.get(self._base_path() + "/route" + str(route), query_list)
+        return self._client.get(self._base_path() + "/route/" + str(route), query_list)
 
     def _base_path(self):
       return "/departures/route_type/" + str(self._route_type) + "/stop/" + str(self._stop_id)
