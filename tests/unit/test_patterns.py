@@ -1,6 +1,5 @@
 import pytest
 from mock import Mock
-from pytest_mock import mocker
 from pyptv3 import Patterns
 
 class TestPatterns:
