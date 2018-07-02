@@ -4,16 +4,14 @@ class Runs:
     def __init__(self, client):
         self._client = client
 
-    def by_id(self, id, route_type = None, **kwargs):
-        query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
+    def by_id(self, id, route_type = None):
         if route_type == None:
-            return self._client.get("/runs/" + str(id), query_list)
+            return self._client.get("/runs/" + str(id))
         else:
-            return self._client.get("/runs/" + str(id) + "/route_type/" + str(route_type), query_list)
+            return self._client.get("/runs/" + str(id) + "/route_type/" + str(route_type))
 
-    def by_route(self, route_id, route_type = None, **kwargs):
-        query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
+    def by_route(self, route_id, route_type = None):
         if route_type == None:
-            return self._client.get("/runs/route/" + str(route_id), query_list)
+            return self._client.get("/runs/route/" + str(route_id))
         else:
-            return self._client.get("/runs/route/" + str(route_id) + "/route_type/" + str(route_type), query_list)
+            return self._client.get("/runs/route/" + str(route_id) + "/route_type/" + str(route_type))
