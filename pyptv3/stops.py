@@ -12,6 +12,6 @@ class Stops:
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
         return self._client.get("/stops/route/" + str(route_id) + "/route_type/" + str(route_type), query_list)
 
-    def by_location(self, latitude, **kwargs):
+    def by_location(self, latitude, longitude, **kwargs):
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
         return self._client.get("/stops/location/" + str(latitude) + "," + str(longitude), query_list)
