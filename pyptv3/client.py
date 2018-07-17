@@ -47,4 +47,4 @@ class Client():
         elif error.code == 404:
             raise pyptv3.NotFoundError(error.reason)
         else:
-            raise pyptv3.UnknownError("Code: " + error.code + " - " + e.reason)
+            raise pyptv3.UnknownError("Code: " + str(error.code) + " - " + error.reason)
