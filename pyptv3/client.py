@@ -9,6 +9,15 @@ class Client():
     API_BASE_URL = "https://timetableapi.ptv.vic.gov.au"
     VERSION = "v3"
 
+    """
+    Create a client class that will get passed in to other API object"
+
+    Args:
+        developer_id (string): Your PTV API developer id
+        api_key (string): Your PTV API api key
+    Returns:
+        client: The initialized client object. Pass this in to the API classes
+    """
     def __init__(self, developer_id = None, api_key = None):
         self._developer_id = developer_id
         self._api_key = api_key
