@@ -22,7 +22,10 @@ class Client():
         self._developer_id = developer_id
         self._api_key = api_key
 
-    def get(self, path, query_params = []):
+    def get(self, path, query_params = None):
+        if query_params is None:
+            query_params = []
+
         url = self._build_url(path, query_params)
 
         try:

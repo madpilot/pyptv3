@@ -10,7 +10,7 @@ The API also returns real-time data for metropolitan train, tram and bus service
 
 ## Getting Started
 
-You will need a developer key from PTV. The instructions (in RTF format) are [here](https://static.ptv.vic.gov.au/PTV/PTV%20docs/API/1475462320/PTV-Timetable-API-key-and-signature-document.RTF), though if you can't be bothered downloading that, the TL;DR is to send an email to [APIKeyRequest@ptv.vic.gov.au with the following information in the subject line of the email](mailto:APIKeyRequest@ptv.vic.gov.au).
+You will need a developer key from PTV. The instructions (in RTF format) are [here](https://static.ptv.vic.gov.au/PTV/PTV%20docs/API/1475462320/PTV-Timetable-API-key-and-signature-document.RTF), though if you can't be bothered downloading that, the TL;DR is to send an email to [APIKeyRequest@ptv.vic.gov.au](mailto:APIKeyRequest@ptv.vic.gov.au) with the following information in the subject line of the email.
 
 ## Installation
 
