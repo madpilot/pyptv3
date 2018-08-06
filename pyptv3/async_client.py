@@ -33,10 +33,10 @@ class AsyncClient():
 
     def _handle_error(self, response):
         if response.status == 400:
-            raise pyptv3.InvalidRequestError("invalid_resquest")
+            raise pyptv3.InvalidRequestError("Invalid Request")
         elif response.status == 403:
-            raise pyptv3.AccessDeniedError("access_denied")
+            raise pyptv3.AccessDeniedError("Access Denied")
         elif response.status == 404:
-            raise pyptv3.NotFoundError("not_found")
+            raise pyptv3.NotFoundError("Not Found")
         else:
             raise pyptv3.UnknownError("Code: " + str(response.status) + " - unknown_error")
