@@ -1,14 +1,8 @@
-import urllib.parse
 import urllib.request
-import hashlib
-import hmac
 import json
 import pyptv3
 
 class Client():
-    API_BASE_URL = "https://timetableapi.ptv.vic.gov.au"
-    VERSION = "v3"
-
     """
     Create a client class that will get passed in to other API object"
 
@@ -19,37 +13,19 @@ class Client():
         client: The initialized client object. Pass this in to the API classes
     """
     def __init__(self, developer_id = None, api_key = None):
-        self._developer_id = developer_id
-        self._api_key = api_key
+        self._url_builder = pyptv3.UrlBuilder(developer_id, api_key)
 
     def get(self, path, query_params = None):
         if query_params is None:
             query_params = []
 
-        url = self._build_url(path, query_params)
+        url = self._url_builder.build(path, query_params)
 
         try:
             response = urllib.request.urlopen(url)
             return json.loads(response.read().decode('utf-8'))
         except urllib.error.HTTPError as e:
             self._handle_error(e)
-
-    def _build_url(self, path, query_params):
-        url = "/" + Client.VERSION + path
-
-        parsed = urllib.parse.urlparse(url)
-        query_params.append(("devid", self._developer_id))
-
-        return Client.API_BASE_URL + self._sign(url, query_params)
-
-    def _sign(self, url, query_params):
-        pre_sign = url + "?" + urllib.parse.urlencode(query_params)
-
-        digest = hmac.new(self._api_key.encode('utf-8'), pre_sign.encode('utf-8'), hashlib.sha1)
-        signature = digest.hexdigest()
-
-        query_params.append(("signature", signature.upper()))
-        return url + "?" + urllib.parse.urlencode(query_params)
 
     def _handle_error(self, error):
         if error.code == 400:
