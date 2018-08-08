@@ -32,6 +32,26 @@ As a general rule, required path parameters are passed as positional arguments, 
 from pyptv3 import Client, Departures
 client = Client("your developer id", "your api key")
 departures = Departures(client, 0, 1341).by_route(4122, platform_numbers=[0, 1], direction_id=1, look_backwards=False, gtfs=123, date_utc="2018-06-28T07:00:00Z", max_results=10, include_cancelled=True, expand=["stop", "route"])
+print(departures)
+```
+
+## AsyncIO Example
+
+There is a Async IO client if you want non-blocking behaviour
+
+```python
+import asyncio
+from pyptv3 import AsyncClient, Departures
+
+loop = asyncio.get_event_loop()
+client = AsyncClient(loop, "your developer id", "your api key")
+
+def main():
+  departures = await Departures(client, 0, 1341).by_route(4122, platform_numbers=[0, 1], direction_id=1, look_backwards=False, gtfs=123, date_utc="2018-06-28T07:00:00Z", max_results=10, include_cancelled=True, expand=["stop", "route"])
+  print(departures)
+
+loop.run_until_complete(main())
+loop.close()
 ```
 
 # TODO
