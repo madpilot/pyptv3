@@ -13,6 +13,8 @@ from .runs import Runs
 from .search import Search
 from .stops import Stops
 
+from .directions_response import DirectionsResponse
+from .direction_response import DirectionResponse
 from .route_types_response import RouteTypesResponse
 from .route_type_response import RouteTypeResponse
 from .status_response import StatusResponse

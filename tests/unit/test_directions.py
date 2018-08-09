@@ -5,7 +5,9 @@ from pyptv3 import Directions
 class TestDirections:
     @pytest.fixture(scope="module")
     def client(self):
-        return Mock()
+        client = Mock()
+        client.get.return_value = {"directions": [], "status": {"version": "3.0", "health": 1}}
+        return client
 
     def test_by_id(self, client):
         Directions(client).by_id(1341)
