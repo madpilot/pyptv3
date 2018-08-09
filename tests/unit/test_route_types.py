@@ -5,7 +5,9 @@ from pyptv3 import RouteTypes
 class TestRoutes:
     @pytest.fixture(scope="module")
     def client(self):
-        return Mock()
+        client = Mock()
+        client.get.return_value = {"route_types": [], "status": {"version": "3.0", "health": 1}}
+        return client
 
     def test_all(self, client):
         RouteTypes(client).all()
