@@ -1,7 +1,7 @@
 import pytest
 from mock import Mock
 import json
-from pyptv3 import RouteTypesResponse, RouteTypeResponse, StatusResponse
+from pyptv3 import RouteTypesResponse, RouteTypeResponse, StatusResponse, ONLINE, TRAIN, TRAM, BUS, VLINE_TRAIN, NIGHT_BUS
 
 class TestRoutes:
     @pytest.fixture(scope="module")
@@ -45,23 +45,23 @@ class TestRoutes:
         assert subject[0].__class__ == RouteTypeResponse
 
         assert subject.types[0].name == "Train"
-        assert subject.types[0].type == RouteTypeResponse.TRAIN
+        assert subject.types[0].type == TRAIN
 
         assert subject.types[1].name == "Tram"
-        assert subject.types[1].type == RouteTypeResponse.TRAM
+        assert subject.types[1].type == TRAM
 
         assert subject.types[2].name == "Bus"
-        assert subject.types[2].type == RouteTypeResponse.BUS
+        assert subject.types[2].type == BUS
 
         assert subject.types[3].name == "Vline"
-        assert subject.types[3].type == RouteTypeResponse.VLINE_TRAIN
+        assert subject.types[3].type == VLINE_TRAIN
 
         assert subject.types[4].name == "Night Bus"
-        assert subject.types[4].type == RouteTypeResponse.NIGHT_BUS
+        assert subject.types[4].type == NIGHT_BUS
 
     def test_status(self, response):
         subject = RouteTypesResponse(response)
         assert subject.status.__class__ == StatusResponse
         assert subject.status.version == "3.0"
-        assert subject.status.health == StatusResponse.ONLINE
+        assert subject.status.health == ONLINE
 

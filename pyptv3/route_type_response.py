@@ -1,10 +1,6 @@
-class RouteTypeResponse:
-    TRAIN = 0
-    TRAM = 1
-    BUS = 2
-    VLINE_TRAIN = 3
-    NIGHT_BUS = 4
+from pyptv3 import TRAIN, TRAM, BUS, VLINE_TRAIN, NIGHT_BUS
 
+class RouteTypeResponse:
     def __init__(self, response):
         self._name = response["route_type_name"]
         self._type = response["route_type"]
@@ -21,15 +17,15 @@ class RouteTypeResponse:
         return self.name
 
     def __repr__(self):
-        if self.type == RouteTypeResponse.TRAIN:
+        if self.type == TRAIN:
             t = "TRAIN"
-        elif self.type == RouteTypeResponse.TRAM:
+        elif self.type == TRAM:
             t = "TRAM"
-        elif self.type == RouteTypeResponse.BUS:
+        elif self.type == BUS:
             t = "BUS"
-        elif self.type == RouteTypeResponse.VLINE_TRAIN:
+        elif self.type == VLINE_TRAIN:
             t = "VLINE_TRAIN"
-        elif self.type == RouteTypeResponse.NIGHT_BUS:
+        elif self.type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
         return "<RouteType name:%s type:%s>" %(self.name, t)

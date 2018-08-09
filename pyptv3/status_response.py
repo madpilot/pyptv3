@@ -1,7 +1,6 @@
-class StatusResponse:
-    ONLINE = 1
-    OFFLINE = 0
+from pyptv3 import ONLINE, OFFLINE
 
+class StatusResponse:
     def __init__(self, response):
         self._version = response["version"]
         self._health = response["health"]
@@ -15,14 +14,14 @@ class StatusResponse:
         return self._health
 
     def __str__(self):
-        if self.health == StatusResponse.OFFLINE:
+        if self.health == OFFLINE:
             return "OFFLINE"
-        elif self.health == StatusResponse.ONLINE:
+        elif self.health == ONLINE:
             return "ONLINE"
 
     def __repr__(self):
         health = "OFFLINE"
-        if self.health == 1:
+        if self.health == ONLINE:
             health == "ONLINE"
 
         return "<Status version:%s health:%s>" %(self.version, str(self))
