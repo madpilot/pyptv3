@@ -24,4 +24,4 @@ class StopByDistanceResponse(pyptv3.StopOnRouteResponse):
         elif self.route_type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<Route distance:%s id:%i name:%s type:%s suburb:%s route_type:%s latitude:%f longitude:%f sequence:%i>" %(self.distance, self.id, self.name, t, self.suburb, self.route_type, self.latitude, self.longitude, self.sequence)
+        return "<Route distance:%r id:%r name:%r type:%r suburb:%r route_type:%r latitude:%r longitude:%r sequence:%r>" %(self.distance, self.id, self.name, t, self.suburb, self.route_type, self.latitude, self.longitude, self.sequence)

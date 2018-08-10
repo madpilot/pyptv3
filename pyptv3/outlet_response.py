@@ -82,4 +82,4 @@ class OutletResponse:
         return self.name
 
     def __repr__(self):
-        return "<Outlet id:%s name:%s business:%s latitude:%s longitude:%s suburb:%s postcode:%i business_hour_mon:%s business_hour_tue:%s business_hour_wed:%s business_hour_thur:%s business_hour_fri:%s business_hour_sat:%s business_hour_sun:%s notes:%s>" %(self.id, self.name, self.business, self.latitude, self.longitude, self.suburb, self.postcode, self.business_hour_mon, self.business_hour_tue, self.business_hour_wed, self.business_hour_thur, self.business_hour_fri, self.business_hour_sat, self.business_hour_sun, self.notes)
+        return "<Outlet id:%r name:%r business:%r latitude:%r longitude:%r suburb:%r postcode:%r business_hour_mon:%r business_hour_tue:%r business_hour_wed:%r business_hour_thur:%r business_hour_fri:%r business_hour_sat:%r business_hour_sun:%r notes:%r>" %(self.id, self.name, self.business, self.latitude, self.longitude, self.suburb, self.postcode, self.business_hour_mon, self.business_hour_tue, self.business_hour_wed, self.business_hour_thur, self.business_hour_fri, self.business_hour_sat, self.business_hour_sun, self.notes)

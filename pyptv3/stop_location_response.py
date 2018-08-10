@@ -9,4 +9,4 @@ class StopLocationResponse:
         return self._gps
 
     def __repr__(self):
-        return "<Gps gps:%f>" %(self.gps)
+        return "<Gps gps:%r>" %(self.gps)

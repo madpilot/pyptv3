@@ -24,5 +24,5 @@ class StatusResponse:
         if self.health == ONLINE:
             health == "ONLINE"
 
-        return "<Status version:%s health:%s>" %(self.version, str(self))
+        return "<Status version:%r health:%r>" %(self.version, str(self))
 

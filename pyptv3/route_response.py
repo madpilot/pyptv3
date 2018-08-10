@@ -44,4 +44,4 @@ class RouteResponse:
         elif self.type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<Route id:%i name:%s type:%s number:%s gtfs_id:%s>" %(self.id, self.name, t, self.number, self.gtfs_id)
+        return "<Route id:%r name:%r type:%r number:%r gtfs_id:%r>" %(self.id, self.name, t, self.number, self.gtfs_id)

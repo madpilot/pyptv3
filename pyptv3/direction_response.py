@@ -40,4 +40,4 @@ class DirectionResponse:
         elif self.route_type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<DirectionResponse id:%i name:%s route_id:%i route_type:%s>" %(self.id, self.name, self.route_id, t)
+        return "<DirectionResponse id:%r name:%r route_id:%r route_type:%r>" %(self.id, self.name, self.route_id, t)

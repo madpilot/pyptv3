@@ -28,4 +28,4 @@ class RouteTypeResponse:
         elif self.type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<RouteType name:%s type:%s>" %(self.name, t)
+        return "<RouteType name:%r type:%r>" %(self.name, t)

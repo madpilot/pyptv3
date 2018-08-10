@@ -33,4 +33,4 @@ class VehicleDescriptorResponse:
 
 
     def __repr__(self):
-        return "<VehicleDescriptorResponse operator:%s id:%i low_flow:%r air_conditioned:%r description:%s supplier:%s>" % (self.operator, self.id, self.low_floor, self.air_conditioned, self.description, self.supplier)
+        return "<VehicleDescriptorResponse operator:%r id:%r low_floor:%r air_conditioned:%r description:%r supplier:%r>" % (self.operator, self.id, self.low_floor, self.air_conditioned, self.description, self.supplier)

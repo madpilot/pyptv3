@@ -12,4 +12,4 @@ class StopGpsResponse:
         return self._longitude
 
     def __repr__(self):
-        return "<Gps latitude:%f longitude:%f>" %(self.latitude, self.longitude)
+        return "<Gps latitude:%r longitude:%r>" %(self.latitude, self.longitude)
