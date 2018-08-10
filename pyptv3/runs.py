@@ -6,12 +6,12 @@ class Runs:
 
     def by_id(self, id, route_type = None):
         if route_type == None:
-            return self._client.get("/runs/" + str(id))
+            return pyptv3.RunsResponse(self._client.get("/runs/" + str(id)))
         else:
-            return self._client.get("/runs/" + str(id) + "/route_type/" + str(route_type))
+            return pyptv3.RunsResponse(self._client.get("/runs/" + str(id) + "/route_type/" + str(route_type)))
 
     def by_route(self, route_id, route_type = None):
         if route_type == None:
-            return self._client.get("/runs/route/" + str(route_id))
+            return pyptv3.RunsResponse(self._client.get("/runs/route/" + str(route_id)))
         else:
-            return self._client.get("/runs/route/" + str(route_id) + "/route_type/" + str(route_type))
+            return pyptv3.RunsResponse(self._client.get("/runs/route/" + str(route_id) + "/route_type/" + str(route_type)))

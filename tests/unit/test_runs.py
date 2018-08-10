@@ -1,6 +1,6 @@
 import pytest
 from mock import Mock
-from pyptv3 import Runs, RunsResponse
+from pyptv3 import Runs
 
 class TestRuns:
     @pytest.fixture(scope="module")
