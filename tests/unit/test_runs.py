@@ -1,11 +1,13 @@
 import pytest
 from mock import Mock
-from pyptv3 import Runs
+from pyptv3 import Runs, RunsResponse
 
 class TestRuns:
     @pytest.fixture(scope="module")
     def client(self):
-        return Mock()
+        client = Mock()
+        client.get.return_value = {"runs": [], "status": {"version": "3.0", "health": 1}}
+        return client
 
     def test_by_id(self, client):
         Runs(client).by_id(10)
