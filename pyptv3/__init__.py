@@ -24,6 +24,8 @@ from .run_response import RunResponse
 from .status_response import StatusResponse
 from .stop_on_routes_response import StopOnRoutesResponse
 from .stop_on_route_response import StopOnRouteResponse
+from .stops_by_distance_response import StopsByDistanceResponse
+from .stop_by_distance_response import StopByDistanceResponse
 from .outlets_response import OutletsResponse
 from .outlet_response import OutletResponse
 from .outlets_geolocation_response import OutletsGeolocationResponse

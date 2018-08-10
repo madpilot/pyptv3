@@ -1,6 +1,6 @@
 import pytest
 from mock import Mock
-from pyptv3 import Stops, StopOnRoutesResponse
+from pyptv3 import Stops, StopOnRoutesResponse, StopsByDistanceResponse
 
 class TestStops:
     @pytest.fixture(scope="module")
@@ -26,9 +26,9 @@ class TestStops:
         client.get.assert_called_with("/stops/route/10/route_type/0", [("stop_location", "true"), ("stop_amenities", "true"), ("stop_accessibility", "true"), ("stop_contact", "true"), ("stop_ticket", "true"), ("gtfs", "true")])
 
     def test_by_location(self, client):
-        Stops(client).by_location(-38.0, 142.0)
+        assert Stops(client).by_location(-38.0, 142.0).__class__ == StopsByDistanceResponse
         client.get.assert_called_with("/stops/location/-38.0,142.0", [])
 
     def test_by_location_with_kwargs(self, client):
-        Stops(client).by_location(-38.0, 142.0, stop_location=True, stop_amenities=True, stop_accessibility=True, stop_contact=True, stop_ticket=True, gtfs=True)
+        assert Stops(client).by_location(-38.0, 142.0, stop_location=True, stop_amenities=True, stop_accessibility=True, stop_contact=True, stop_ticket=True, gtfs=True).__class__ == StopsByDistanceResponse
         client.get.assert_called_with("/stops/location/-38.0,142.0", [("stop_location", "true"), ("stop_amenities", "true"), ("stop_accessibility", "true"), ("stop_contact", "true"), ("stop_ticket", "true"), ("gtfs", "true")])

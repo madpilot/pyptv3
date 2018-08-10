@@ -16,7 +16,7 @@ class StopOnRouteResponse:
 
     @property
     def name(self):
-        return self._name
+        return self._name.strip()
 
     @property
     def suburb(self):
