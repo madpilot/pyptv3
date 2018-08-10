@@ -15,21 +15,34 @@ from .stops import Stops
 
 from .directions_response import DirectionsResponse
 from .direction_response import DirectionResponse
+
 from .routes_response import RoutesResponse
 from .route_response import RouteResponse
 from .route_types_response import RouteTypesResponse
 from .route_type_response import RouteTypeResponse
+
 from .runs_response import RunsResponse
 from .run_response import RunResponse
+
 from .status_response import StatusResponse
+
+from .stop_response import StopResponse
+from .stop_details_response import StopDetailsResponse
+from .stop_location_response import StopLocationResponse
+from .stop_gps_response import StopGpsResponse
+from .stop_amenity_details_response import StopAmenityDetailsResponse
+from .stop_accessibility_response import StopAccessibilityResponse
+from .stop_accessibility_wheelchair_response import StopAccessibilityWheelchairResponse
 from .stop_on_routes_response import StopOnRoutesResponse
 from .stop_on_route_response import StopOnRouteResponse
 from .stops_by_distance_response import StopsByDistanceResponse
 from .stop_by_distance_response import StopByDistanceResponse
+
 from .outlets_response import OutletsResponse
 from .outlet_response import OutletResponse
 from .outlets_geolocation_response import OutletsGeolocationResponse
 from .outlet_geolocation_response import OutletGeolocationResponse
+
 from .vehicle_descriptor_response import VehicleDescriptorResponse
 from .vehicle_position_response import VehiclePositionResponse
 
