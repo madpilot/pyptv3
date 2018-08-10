@@ -24,6 +24,8 @@ from .run_response import RunResponse
 from .status_response import StatusResponse
 from .outlets_response import OutletsResponse
 from .outlet_response import OutletResponse
+from .outlets_geolocation_response import OutletsGeolocationResponse
+from .outlet_geolocation_response import OutletGeolocationResponse
 from .vehicle_descriptor_response import VehicleDescriptorResponse
 from .vehicle_position_response import VehiclePositionResponse
 

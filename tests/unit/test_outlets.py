@@ -1,6 +1,6 @@
 import pytest
 from mock import Mock
-from pyptv3 import Outlets
+from pyptv3 import Outlets, OutletsGeolocationResponse, OutletsResponse
 
 class TestOutlets:
     @pytest.fixture(scope="module")
@@ -10,15 +10,15 @@ class TestOutlets:
         return client
 
     def test_all(self, client):
-        Outlets(client).all()
+        assert Outlets(client).all().__class__ == OutletsResponse
         client.get.assert_called_with("/outlets", [])
 
     def test_all_with_kwargs(self, client):
-        Outlets(client).all(max_results=10)
+        assert Outlets(client).all(max_results=10).__class__ == OutletsResponse
         client.get.assert_called_with("/outlets", [("max_results", 10)])
 
     def test_by_location(self, client):
-        Outlets(client).by_location(37.8136, 144.9631)
+        assert Outlets(client).by_location(37.8136, 144.9631).__class__ == OutletsGeolocationResponse
         client.get.assert_called_with("/outlets/location/37.8136,144.9631", [])
 
     def test_by_location_with_kwargs(self, client):
