@@ -15,6 +15,8 @@ from .stops import Stops
 
 from .directions_response import DirectionsResponse
 from .direction_response import DirectionResponse
+from .routes_response import RoutesResponse
+from .route_response import RouteResponse
 from .route_types_response import RouteTypesResponse
 from .route_type_response import RouteTypeResponse
 from .runs_response import RunsResponse
