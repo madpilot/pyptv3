@@ -2,7 +2,7 @@ import pyptv3
 
 class OutletGeolocationResponse(pyptv3.OutletResponse):
     def __init__(self, response):
-        super(OutletGeolocationResponse, self).__init__(response)
+        super().__init__(response)
         self._distance = response["outlet_distance"]
 
     @property
