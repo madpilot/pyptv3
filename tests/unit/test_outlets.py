@@ -22,5 +22,5 @@ class TestOutlets:
         client.get.assert_called_with("/outlets/location/37.8136,144.9631", [])
 
     def test_by_location_with_kwargs(self, client):
-        Outlets(client).by_location(37.8136, 144.9631, max_results=10, max_distance=1000)
+        assert Outlets(client).by_location(37.8136, 144.9631, max_results=10, max_distance=1000).__class__ == OutletsGeolocationResponse
         client.get.assert_called_with("/outlets/location/37.8136,144.9631", [("max_results", 10), ("max_distance", 1000)])
