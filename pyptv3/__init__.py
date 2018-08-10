@@ -22,6 +22,8 @@ from .route_type_response import RouteTypeResponse
 from .runs_response import RunsResponse
 from .run_response import RunResponse
 from .status_response import StatusResponse
+from .outlets_response import OutletsResponse
+from .outlet_response import OutletResponse
 from .vehicle_descriptor_response import VehicleDescriptorResponse
 from .vehicle_position_response import VehiclePositionResponse
 

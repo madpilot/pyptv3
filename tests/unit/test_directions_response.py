@@ -3,7 +3,7 @@ from mock import Mock
 import json
 from pyptv3 import DirectionsResponse, DirectionResponse, StatusResponse, ONLINE, TRAIN, TRAM, BUS, VLINE_TRAIN, NIGHT_BUS
 
-class TestRoutes:
+class TestDirectionsResponse:
     @pytest.fixture(scope="module")
     def response(self):
         return json.loads("""
