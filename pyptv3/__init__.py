@@ -24,6 +24,8 @@ from .route_type_response import RouteTypeResponse
 from .runs_response import RunsResponse
 from .run_response import RunResponse
 
+from .search_response import SearchResponse
+
 from .status_response import StatusResponse
 
 from .stop_response import StopResponse
