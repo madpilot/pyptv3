@@ -22,6 +22,7 @@ from .route_types_response import RouteTypesResponse
 from .route_type_response import RouteTypeResponse
 
 from .disruptions_response import DisruptionsResponse
+from .single_disruption_response import SingleDisruptionResponse
 from .disruption_response import DisruptionResponse
 from .disruption_route_response import DisruptionRouteResponse
 from .disruption_direction_response import DisruptionDirectionResponse
