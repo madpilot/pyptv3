@@ -14,7 +14,7 @@ class SingleDisruptionResponse():
         return self._status
 
     def __repr__(self):
-        return "<Disruptions disruption:%r status:%r>" %(self.disruptions, self.status)
+        return "<Disruption disruption:%r status:%r>" %(self.disruptions, self.status)
 
     def __getitem__(self, key):
         return self.disruption[key]

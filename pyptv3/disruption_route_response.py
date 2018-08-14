@@ -12,4 +12,7 @@ class DisruptionRouteResponse(pyptv3.RouteResponse):
     def direction(self):
         return self._direction
 
+    def __repr__(self):
+        return "<Routes direction:%r routes:%r status:%r>" %(self.direction, self.routes, self.status)
+
 

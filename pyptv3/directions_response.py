@@ -14,7 +14,7 @@ class DirectionsResponse():
         return self._status
 
     def __repr__(self):
-        return "<DirectionsResponse directions:%r status:%r>" %(self.directions, self.status)
+        return "<Directions directions:%r status:%r>" %(self.directions, self.status)
 
     def __getitem__(self, key):
         return self.directions[key]

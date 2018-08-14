@@ -8,6 +8,7 @@ class DepartureResponse:
         self._direction_id = response["direction_id"]
         self._disruption_ids = response["disruption_ids"]
         self._scheduled_departure = None
+
         if response["scheduled_departure_utc"]:
             self._scheduled_departure = self.parse_datetime(response["scheduled_departure_utc"])
 
@@ -67,3 +68,5 @@ class DepartureResponse:
     def sequence(self):
         return self._sequence
 
+    def __repr__(self):
+        return "<Departure stop_id:%r route_id:%r run_id:%r direction_id:%r disruption_ids: %r scheduled_departure:%r estimated_departure:%r at_platform:%r platform_number:%r flags:%r sequence:%r>" %(self.stop_id, self.route_id, self.run_id, self.direction_id, self._disruption_ids, self.scheduled_departure, self.estimated_departure, self.at_platform, self.platform_number, self.flags, self.sequence)

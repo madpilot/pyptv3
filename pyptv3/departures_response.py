@@ -40,7 +40,7 @@ class DeparturesResponse:
         return self._status
 
     def __repr__(self):
-        return "<DeparturesResponse departures:%r status:%r>" %(self.departures, self.status)
+        return "<Departures departures:%r status:%r>" %(self.departures, self.status)
 
     def __getitem__(self, key):
         return self.departures[key]

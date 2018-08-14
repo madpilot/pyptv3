@@ -31,3 +31,9 @@ class DisruptionDirectionResponse:
     def service_time(self):
         return self._service_time
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return "<DisruptionDirection id:%r name:%r route_direction_id:%r service_time:%r>" %(self.id, self.name, self.route_direction_id, self.service_time)
+
