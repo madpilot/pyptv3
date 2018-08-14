@@ -1,6 +1,5 @@
 import pytest
 from mock import Mock
-import datetime
 import json
 from pyptv3 import SingleDisruptionResponse, DisruptionResponse, StatusResponse, ONLINE, TRAIN
 

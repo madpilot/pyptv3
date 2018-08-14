@@ -3,11 +3,11 @@ import pyptv3
 class DeparturesResponse:
     def __init__(self, response):
         self._departures = list(map(lambda t: pyptv3.DepartureResponse(t), response["departures"]))
-        self._stops = {}
-        self._routes = {}
-        self._runs = {}
-        self._directions = {}
-        self._diruptions = {}
+        self._stops = dict(map(lambda kv: (kv[0], pyptv3.StopByDistanceResponse(kv[1])), response["stops"].items()))
+        self._routes = dict(map(lambda kv: (kv[0], pyptv3.RouteResponse(kv[1])), response["routes"].items()))
+        self._runs = dict(map(lambda kv: (kv[0], pyptv3.RunResponse(kv[1])), response["runs"].items()))
+        self._directions = dict(map(lambda kv: (kv[0], pyptv3.DirectionResponse(kv[1])), response["directions"].items()))
+        self._disruptions = dict(map(lambda kv: (kv[0], pyptv3.DisruptionResponse(kv[1])), response["disruptions"].items()))
         self._status = pyptv3.StatusResponse(response["status"])
 
     @property

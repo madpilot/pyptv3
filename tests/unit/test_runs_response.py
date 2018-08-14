@@ -121,14 +121,14 @@ class TestRunsResponse:
         assert subject.runs[0].__class__ == RunResponse
         assert subject[0].__class__ == RunResponse
 
-        assert subject.runs[0].run_id == 44076
+        assert subject.runs[0].id == 44076
         assert subject.runs[0].route_id == 13
         assert subject.runs[0].route_type == TRAIN
         assert subject.runs[0].final_stop_id == 1185
         assert subject.runs[0].destination_name == "Stony Point"
         assert subject.runs[0].status == "scheduled"
         assert subject.runs[0].direction_id == 12
-        assert subject.runs[0].run_sequence == 0
+        assert subject.runs[0].sequence == 0
         assert subject.runs[0].express_stop_count == 0
         assert subject.runs[0].vehicle_position == None
         assert subject.runs[0].vehicle_descriptor == None

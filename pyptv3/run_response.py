@@ -3,14 +3,14 @@ import pyptv3
 
 class RunResponse:
     def __init__(self, response):
-        self._run_id = response["run_id"]
+        self._id = response["run_id"]
         self._route_id = response["route_id"]
         self._route_type = response["route_type"]
         self._final_stop_id = response["final_stop_id"]
         self._destination_name = response["destination_name"]
         self._status = response["status"]
         self._direction_id = response["direction_id"]
-        self._run_sequence = response["run_sequence"]
+        self._sequence = response["run_sequence"]
         self._express_stop_count = response["express_stop_count"]
         self._vehicle_position = None
         if response["vehicle_position"] is not None:
@@ -20,8 +20,8 @@ class RunResponse:
             self._vehicle_descriptor = pyptv3.VehicleDescriptorResponse(response["vehicle_descriptor"])
 
     @property
-    def run_id(self):
-        return self._run_id
+    def id(self):
+        return self._id
 
     @property
     def route_id(self):
@@ -48,8 +48,8 @@ class RunResponse:
           return self._direction_id
 
     @property
-    def run_sequence(self):
-        return self._run_sequence
+    def sequence(self):
+        return self._sequence
 
     @property
     def express_stop_count(self):
@@ -78,4 +78,4 @@ class RunResponse:
         elif self.route_type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<Run run_id:%r route_id:%r route_type:%r final_stop_id:%r destination_name:%r status:%r direction_id:%r, run_sequence:%r express_stop_count:%r vehicle_position:%r vehicle_descriptor:%r>" % (self.run_id, self.route_id, t, self.final_stop_id, self.destination_name, self.status, self.direction_id, self.run_sequence, self.express_stop_count, self.vehicle_position, self.vehicle_descriptor)
+        return "<Run id:%r route_id:%r route_type:%r final_stop_id:%r destination_name:%r status:%r direction_id:%r, run_sequence:%r express_stop_count:%r vehicle_position:%r vehicle_descriptor:%r>" % (self.id, self.route_id, t, self.final_stop_id, self.destination_name, self.status, self.direction_id, self.run_sequence, self.express_stop_count, self.vehicle_position, self.vehicle_descriptor)
