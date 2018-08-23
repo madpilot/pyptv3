@@ -1,3 +1,7 @@
+"""
+    Some useful constants.
+"""
+
 ONLINE = 1
 OFFLINE = 0
 

@@ -1,5 +1,5 @@
 """
-    Provides the Client. A client instance gets passed to every pyptv3 class
+    Provides a Client. A client instance gets passed to every pyptv3 class
     constructor.
 """
 
