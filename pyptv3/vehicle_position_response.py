@@ -23,4 +23,4 @@ class VehiclePositionResponse:
 
 
     def __repr__(self):
-        return "<VehiclePositionResponse latitude:%r longitude:%r bearing:%r supplier:%r>" %(self.latitude, self.longitude, bearing, supplier)
+        return "<VehiclePosition latitude:%r longitude:%r bearing:%r supplier:%r>" %(self.latitude, self.longitude, bearing, supplier)

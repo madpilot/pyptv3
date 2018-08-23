@@ -53,4 +53,4 @@ class StopOnRouteResponse:
         elif self.route_type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<Route id:%r name:%r type:%r suburb:%r route_type:%r latitude:%r longitude:%r sequence:%r>" %(self.id, self.name, t, self.suburb, self.route_type, self.latitude, self.longitude, self.sequence)
+        return "<StopOnRoute id:%r name:%r type:%r suburb:%r route_type:%r latitude:%r longitude:%r sequence:%r>" %(self.id, self.name, t, self.suburb, self.route_type, self.latitude, self.longitude, self.sequence)
