@@ -2,7 +2,7 @@ import pytest
 from mock import Mock
 import json
 import datetime
-from pyptv3 import DeparturesResponse, DepartureResponse, StopByDistanceResponse, RouteResponse, RunResponse, DirectionResponse, DisruptionResponse, StatusResponse, ONLINE, TRAIN
+from pyptv3 import PatternsResponse, DepartureResponse, StopByDistanceResponse, RouteResponse, RunResponse, DirectionResponse, DisruptionResponse, StatusResponse, ONLINE, TRAIN
 
 class TestDeparturesResponse:
     @pytest.fixture(scope="module")
@@ -41,7 +41,7 @@ class TestDeparturesResponse:
             "routes": {},
             "runs": {},
             "directions": {},
-            "disruptions": {},
+            "disruptions": [],
             "status": {
               "version": "3.0",
               "health": 1
@@ -83,7 +83,7 @@ class TestDeparturesResponse:
             "routes": {},
             "runs": {},
             "directions": {},
-            "disruptions": {},
+            "disruptions": [],
             "status": {
               "version": "3.0",
               "health": 1
@@ -135,7 +135,7 @@ class TestDeparturesResponse:
             },
             "runs": {},
             "directions": {},
-            "disruptions": {},
+            "disruptions": [],
             "status": {
               "version": "3.0",
               "health": 1
@@ -193,7 +193,7 @@ class TestDeparturesResponse:
               }
             },
             "directions": {},
-            "disruptions": {},
+            "disruptions": [],
             "status": {
               "version": "3.0",
               "health": 1
@@ -250,7 +250,7 @@ class TestDeparturesResponse:
                 "route_type": 0
               }
             },
-            "disruptions": {},
+            "disruptions": [],
             "status": {
               "version": "3.0",
               "health": 1
@@ -299,8 +299,8 @@ class TestDeparturesResponse:
             "routes": {},
             "runs": {},
             "directions": {},
-            "disruptions": {
-                "142498": {
+            "disruptions": [
+                {
                   "disruption_id": 142498,
                   "title": "Frankston line stations: Temporary car park closures and changes to pedestrian access until late-2018",
                   "url": "http://ptv.vic.gov.au/live-travel-updates/article/frankston-line-stations-temporary-car-park-closures-and-changes-to-pedestrian-access-until-late-2018",
@@ -322,7 +322,7 @@ class TestDeparturesResponse:
                     }
                   ]
                 }
-            },
+            ],
             "status": {
               "version": "3.0",
               "health": 1
@@ -332,12 +332,11 @@ class TestDeparturesResponse:
 
 
     def test_departures(self, response):
-        subject = DeparturesResponse(response)
+        subject = PatternsResponse(response)
         assert len(subject.departures) == 2
 
         assert subject.departures[0].__class__ == DepartureResponse
-        assert subject[0].__class__ == DepartureResponse
-        departure = subject[0]
+        departure = subject.departures[0]
 
         assert departure.stop_id == 1196
         assert departure.route_id == 14
@@ -352,12 +351,11 @@ class TestDeparturesResponse:
         assert departure.sequence == 0
 
     def test_departures_with_estimated_departure(self, response):
-        subject = DeparturesResponse(response)
+        subject = PatternsResponse(response)
         assert len(subject.departures) == 2
 
         assert subject.departures[1].__class__ == DepartureResponse
-        assert subject[1].__class__ == DepartureResponse
-        departure = subject[1]
+        departure = subject.departures[1]
 
         assert departure.stop_id == 1196
         assert departure.route_id == 14
@@ -372,7 +370,7 @@ class TestDeparturesResponse:
         assert departure.sequence == 0
 
     def test_departures_with_stops(self, response_with_stops):
-        subject = DeparturesResponse(response_with_stops)
+        subject = PatternsResponse(response_with_stops)
         assert len(subject.stops.keys()) == 1
         assert subject.stops["1196"].__class__ == StopByDistanceResponse
         stop = subject.stops["1196"]
@@ -387,7 +385,7 @@ class TestDeparturesResponse:
         assert stop.sequence == 0
 
     def test_departures_with_routes(self, response_with_routes):
-        subject = DeparturesResponse(response_with_routes)
+        subject = PatternsResponse(response_with_routes)
         assert len(subject.routes.keys()) == 1
         assert subject.routes["14"].__class__ == RouteResponse
         route = subject.routes["14"]
@@ -399,7 +397,7 @@ class TestDeparturesResponse:
         assert route.gtfs_id == "2-SYM"
 
     def test_departures_with_runs(self, response_with_runs):
-        subject = DeparturesResponse(response_with_runs)
+        subject = PatternsResponse(response_with_runs)
         assert len(subject.runs.keys()) == 1
         assert subject.runs["954708"].__class__ == RunResponse
         run = subject.runs["954708"]
@@ -417,7 +415,7 @@ class TestDeparturesResponse:
         assert run.vehicle_descriptor == None
 
     def test_departures_with_directions(self, response_with_directions):
-        subject = DeparturesResponse(response_with_directions)
+        subject = PatternsResponse(response_with_directions)
         assert len(subject.directions.keys()) == 2
         assert subject.directions["1"].__class__ == DirectionResponse
         direction = subject.directions["1"]
@@ -428,10 +426,10 @@ class TestDeparturesResponse:
         assert direction.route_type == TRAIN
 
     def test_departures_with_disruptions(self, response_with_disruptions):
-        subject = DeparturesResponse(response_with_disruptions)
-        assert len(subject.disruptions.keys()) == 1
-        assert subject.disruptions["142498"].__class__ == DisruptionResponse
-        disruption = subject.disruptions["142498"]
+        subject = PatternsResponse(response_with_disruptions)
+        assert len(subject.disruptions) == 1
+        assert subject.disruptions[0].__class__ == DisruptionResponse
+        disruption = subject.disruptions[0]
 
         assert disruption.id == 142498
         assert disruption.title == "Frankston line stations: Temporary car park closures and changes to pedestrian access until late-2018"
@@ -452,11 +450,12 @@ class TestDeparturesResponse:
 
 
     def test_status(self, response):
-        subject = DeparturesResponse(response)
+        subject = PatternsResponse(response)
         assert subject.status.__class__ == StatusResponse
         assert subject.status.version == "3.0"
         assert subject.status.health == ONLINE
 
+
     def test_repr(self, response):
-        subject = DeparturesResponse(response)
+        subject = PatternsResponse(response)
         assert subject.__repr__().__class__ == str

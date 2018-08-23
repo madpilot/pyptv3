@@ -54,6 +54,8 @@ from .outlet_response import OutletResponse
 from .outlets_geolocation_response import OutletsGeolocationResponse
 from .outlet_geolocation_response import OutletGeolocationResponse
 
+from .patterns_response import PatternsResponse
+
 from .vehicle_descriptor_response import VehicleDescriptorResponse
 from .vehicle_position_response import VehiclePositionResponse
 

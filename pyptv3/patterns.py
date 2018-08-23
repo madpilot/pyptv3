@@ -8,4 +8,4 @@ class Patterns:
 
     def all(self, **kwargs):
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
-        return self._client.get("/pattern/run/" + str(self._run_id) + "/route_type/" + str(self._route_type), query_list)
+        return pyptv3.PatternsResponse(self._client.get("/pattern/run/" + str(self._run_id) + "/route_type/" + str(self._route_type), query_list))

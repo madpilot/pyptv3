@@ -87,3 +87,7 @@ class TestStopsByDistanceResponse:
         assert subject.status.version == "3.0"
         assert subject.status.health == ONLINE
 
+
+    def test_repr(self, response):
+        subject = StopsByDistanceResponse(response)
+        assert subject.__repr__().__class__ == str

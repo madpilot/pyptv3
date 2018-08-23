@@ -78,4 +78,4 @@ class RunResponse:
         elif self.route_type == NIGHT_BUS:
             t = "NIGHT_BUS"
 
-        return "<Run id:%r route_id:%r route_type:%r final_stop_id:%r destination_name:%r status:%r direction_id:%r, run_sequence:%r express_stop_count:%r vehicle_position:%r vehicle_descriptor:%r>" % (self.id, self.route_id, t, self.final_stop_id, self.destination_name, self.status, self.direction_id, self.run_sequence, self.express_stop_count, self.vehicle_position, self.vehicle_descriptor)
+        return "<Run id:%r route_id:%r route_type:%r final_stop_id:%r destination_name:%r status:%r direction_id:%r, run_sequence:%r express_stop_count:%r vehicle_position:%r vehicle_descriptor:%r>" % (self.id, self.route_id, t, self.final_stop_id, self.destination_name, self.status, self.direction_id, self.sequence, self.express_stop_count, self.vehicle_position, self.vehicle_descriptor)

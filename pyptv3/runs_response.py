@@ -14,7 +14,7 @@ class RunsResponse:
         return self._status
 
     def __repr__(self):
-        return "<RunsResponse runs:%r status:%r>" %(self.runs, self.status)
+        return "<Runs runs:%r status:%r>" %(self.runs, self.status)
 
     def __getitem__(self, key):
         return self.runs[key]
