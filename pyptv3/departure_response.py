@@ -8,8 +8,7 @@ def _parse_datetime(time):
 
 class DepartureResponse: # pylint: disable=too-many-instance-attributes
     """
-        Service departures from the specified stop for the specified route (and route type);
-        departures are timetabled and real-time (if applicable).
+        Wraps the response from a Departure request
     """
     def __init__(self, response):
         self._stop_id = response["stop_id"]
