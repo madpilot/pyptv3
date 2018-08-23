@@ -1,4 +1,4 @@
-# pyptv3 - Access the Public Transport Victoria API with Python 3 ![Build Status](https://travis-ci.org/madpilot/pyptv3.svg?branch=master)
+# pyptv3 - Access the Public Transport Victoria API with Python 3 [![Build Status](https://travis-ci.org/madpilot/pyptv3.svg?branch=master)](https://travis-ci.org/madpilot/pyptv3)
 
 pyptv3 is a Python 3.6+ library that talks to version 3 of the Public Transport Victoria (PTV) API.
 
