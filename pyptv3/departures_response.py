@@ -1,7 +1,7 @@
 """ Provides the DeparturesResponse Class """
 import pyptv3
 
-class DeparturesResponse: # pylint: disable=unnecessary-lambda
+class DeparturesResponse: # pylint: disable=unnecessary-lambda,line-too-long
     """
         Wraps the response from a Departures request
     """
@@ -99,20 +99,8 @@ class DeparturesResponse: # pylint: disable=unnecessary-lambda
         return self._status
 
     def __repr__(self):
-        return "<Departures departures:%r \
-                            stops:%r \
-                            routes:%r \
-                            runs:%r \
-                            directions:%r \
-                            disruptions:%r \
-                            status:%r>" % (\
-                                self.departures, \
-                                self.stops, \
-                                self.routes, \
-                                self.runs, \
-                                self.directions, \
-                                self.disruptions, \
-                                self.status)
+        return "<Departures departures:%r stops:%r routes:%r runs:%r directions:%r disruptions:%r status:%r>" % \
+                            (self.departures, self.stops, self.routes, self.runs, self.directions, self.disruptions, self.status)
 
     def __getitem__(self, key):
         return self.departures[key]

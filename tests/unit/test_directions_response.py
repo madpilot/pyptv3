@@ -54,27 +54,27 @@ class TestDirectionsResponse:
         assert subject.directions[0].__class__ == DirectionResponse
         assert subject[0].__class__ == DirectionResponse
 
-        assert subject.directions[0].id == 13
+        assert subject.directions[0].direction_id == 13
         assert subject.directions[0].name == "Sunbury"
         assert subject.directions[0].route_type == TRAIN
         assert subject.directions[0].route_id == 14
 
-        assert subject.directions[1].id == 13
+        assert subject.directions[1].direction_id == 13
         assert subject.directions[1].name == "Flinders Street Station (City)"
         assert subject.directions[1].route_type == TRAM
         assert subject.directions[1].route_id == 725
 
-        assert subject.directions[2].id == 13
+        assert subject.directions[2].direction_id == 13
         assert subject.directions[2].name == "Brighton Beach"
         assert subject.directions[2].route_type == BUS
         assert subject.directions[2].route_id == 11694
 
-        assert subject.directions[3].id == 13
+        assert subject.directions[3].direction_id == 13
         assert subject.directions[3].name == "Barham"
         assert subject.directions[3].route_type == VLINE_TRAIN
         assert subject.directions[3].route_id == 1744
 
-        assert subject.directions[4].id == 13
+        assert subject.directions[4].direction_id == 13
         assert subject.directions[4].name == "Lilydale"
         assert subject.directions[4].route_type == NIGHT_BUS
         assert subject.directions[4].route_id == 8964

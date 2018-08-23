@@ -11,8 +11,6 @@ class Departures:
             values returned via a call to RouteTypes#get
         stop_id (int): Identifier of stop;
             values returned via a call to Stops API
-    Returns:
-        client: The initialized client object. Pass this in to the API classes
     """
     def __init__(self, client, route_type, stop_id):
         self._client = client
@@ -24,6 +22,9 @@ class Departures:
         Service departures from the specified stop for all routes of the specified
         route type;
         departures are timetabled and real-time (if applicable).
+
+        Returns:
+            pyptv3.DeparturesResponse
         """
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
         return pyptv3.DeparturesResponse(self._client.get(self._base_path(), query_list))
@@ -33,10 +34,13 @@ class Departures:
         Service departures from the specified stop for the specified route
         (and route type);
         departures are timetabled and real-time (if applicable).
+
+        Returns:
+            pyptv3.DeparturesResponse
         """
         query_list = pyptv3.QueryParams.process_kwargs(**kwargs)
-        path = self._base_path() + "/route/" + str(route), query_list
-        response = self._client.get(path)
+        path = self._base_path() + "/route/" + str(route)
+        response = self._client.get(path, query_list)
         return pyptv3.DeparturesResponse(response)
 
     def _base_path(self):

@@ -1,28 +1,44 @@
+""" Provides the DirectionResponse Class """
 from pyptv3 import TRAIN, TRAM, BUS, VLINE_TRAIN, NIGHT_BUS
 
 class DirectionResponse:
+    """
+        Wraps the response from a Direction request
+    """
     def __init__(self, response):
-        self._id = response["direction_id"]
+        self._direction_id = response["direction_id"]
         self._name = response["direction_name"]
         self._route_id = response["route_id"]
         self._route_type = response["route_type"]
 
     @property
-    def id(self):
-        return self._id
+    def direction_id(self):
+        """
+        Direction of travel identifier (int)
+        """
+        return self._direction_id
 
 
     @property
     def name(self):
+        """
+        Name of direction of travel (str)
+        """
         return self._name
 
     @property
     def route_id(self):
+        """
+        Route identifier (int)
+        """
         return self._route_id
 
 
     @property
     def route_type(self):
+        """
+        Transport mode identifier (TRAIN|TRAM|BUS|VLINE_TRAIN|NIGHT_BUS)
+        """
         return self._route_type
 
     def __str__(self):
@@ -30,14 +46,15 @@ class DirectionResponse:
 
     def __repr__(self):
         if self.route_type == TRAIN:
-            t = "TRAIN"
+            route_type = "TRAIN"
         elif self.route_type == TRAM:
-            t = "TRAM"
+            route_type = "TRAM"
         elif self.route_type == BUS:
-            t = "BUS"
+            route_type = "BUS"
         elif self.route_type == VLINE_TRAIN:
-            t = "VLINE_TRAIN"
+            route_type = "VLINE_TRAIN"
         elif self.route_type == NIGHT_BUS:
-            t = "NIGHT_BUS"
+            route_type = "NIGHT_BUS"
 
-        return "<Direction id:%r name:%r route_id:%r route_type:%r>" %(self.id, self.name, self.route_id, t)
+        return "<Direction direction_id:%r name:%r route_id:%r route_type:%r>" % \
+                    (self.direction_id, self.name, self.route_id, route_type)

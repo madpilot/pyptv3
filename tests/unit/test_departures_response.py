@@ -422,7 +422,7 @@ class TestDeparturesResponse:
         assert subject.directions["1"].__class__ == DirectionResponse
         direction = subject.directions["1"]
 
-        assert direction.id == 1
+        assert direction.direction_id == 1
         assert direction.name == "City (Flinders Street)"
         assert direction.route_id == 14
         assert direction.route_type == TRAIN

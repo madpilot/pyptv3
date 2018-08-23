@@ -6,7 +6,7 @@ import datetime
 def _parse_datetime(time):
     return datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
 
-class DepartureResponse: # pylint: disable=too-many-instance-attributes
+class DepartureResponse: # pylint: disable=too-many-instance-attributes,line-too-long
     """
         Wraps the response from a Departure request
     """
@@ -156,24 +156,5 @@ class DepartureResponse: # pylint: disable=too-many-instance-attributes
         return self._sequence
 
     def __repr__(self):
-        return """<Departure stop_id:%r
-                            route_id:%r
-                            run_id:%r
-                            direction_id:%r
-                            disruption_ids: %r
-                            scheduled_departure:%r
-                            estimated_departure:%r
-                            at_platform:%r
-                            platform_number:%r
-                            flags:%r sequence:%r>""" % (\
-                                self.stop_id,
-                                self.route_id,
-                                self.run_id,
-                                self.direction_id,
-                                self._disruption_ids,
-                                self.scheduled_departure,
-                                self.estimated_departure,
-                                self.at_platform,
-                                self.platform_number,
-                                self.flags,
-                                self.sequence)
+        return """<Departure stop_id:%r route_id:%r run_id:%r direction_id:%r disruption_ids: %r scheduled_departure:%r estimated_departure:%r at_platform:%r platform_number:%r flags:%r sequence:%r>""" % (\
+                    self.stop_id, self.route_id, self.run_id, self.direction_id, self._disruption_ids, self.scheduled_departure, self.estimated_departure, self.at_platform, self.platform_number, self.flags, self.sequence)
