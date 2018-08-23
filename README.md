@@ -1,6 +1,6 @@
-# pyptv3 - Access the Public Transport Victoria API with Python 3
+# pyptv3 - Access the Public Transport Victoria API with Python 3 ![https://travis-ci.org/madpilot/pyptv3.svg?branch=master]
 
-pyptv3 is a Python library that provides a light wrapper around version 3 of the Public Transport Victoria (PTV) API.
+pyptv3 is a Python 3.6+ library that talks to version 3 of the Public Transport Victoria (PTV) API.
 
 The PTV Timetable API provides direct access to Public Transport Victoria’s public transport timetable data.
 
@@ -57,4 +57,3 @@ loop.close()
 # TODO
 
 * pydoc
-* Map the parsed JSON object to Python objects.
