@@ -1,6 +1,10 @@
+""" Provides the DisruptionsResponse Class """
 import pyptv3
 
-class DisruptionsResponse():
+class DisruptionsResponse(): # pylint: disable=line-too-long,unnecessary-lambda
+    """
+        Wraps the response from a Disruptions request
+    """
     def __init__(self, response):
         self._disruptions = {}
         self._disruptions["general"] = []
@@ -36,10 +40,19 @@ class DisruptionsResponse():
 
     @property
     def disruptions(self):
+        """
+        Disruption information applicable to relevant routes or stops
+        """
         return self._disruptions
 
     @property
     def status(self):
+        """
+        API Status object
+
+        Returns:
+            pyptv3.Status
+        """
         return self._status
 
     def __repr__(self):
@@ -53,4 +66,3 @@ class DisruptionsResponse():
 
     def __len__(self):
         return self.disruptions.__len__()
-

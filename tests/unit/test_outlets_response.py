@@ -58,7 +58,7 @@ class TestOutletsResponse:
         assert subject.outlets[0].__class__ == OutletResponse
         assert subject[0].__class__ == OutletResponse
 
-        assert subject.outlets[0].id == "814"
+        assert subject.outlets[0].outlet_id == "814"
         assert subject.outlets[0].name == "3/67-69 Separation Street"
         assert subject.outlets[0].business == "7-Eleven Geelong North"
         assert subject.outlets[0].latitude == -38.1110878
@@ -74,7 +74,7 @@ class TestOutletsResponse:
         assert subject.outlets[0].business_hour_sun == "24 Hours"
         assert subject.outlets[0].notes == None
 
-        assert subject.outlets[1].id == "815"
+        assert subject.outlets[1].outlet_id == "815"
         assert subject.outlets[1].name == "115 Moorabool Street"
         assert subject.outlets[1].business == "7-Eleven Geelong City"
         assert subject.outlets[1].latitude == -38.1483879

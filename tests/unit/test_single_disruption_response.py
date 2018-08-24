@@ -33,7 +33,7 @@ class TestDisruptionsResponse:
         subject = SingleDisruptionResponse(response)
 
         assert subject.disruption.__class__ == DisruptionResponse
-        assert subject.disruption.id == 144252
+        assert subject.disruption.disruption_id == 144252
         assert subject.disruption.title == "Seymour line: Coaches replacing selected trains from Sunday 12 August to Wednesday 15 August 2018"
         assert subject.disruption.url == "http://ptv.vic.gov.au/live-travel-updates/article/seymour-and-shepparton-lines-coaches-replacing-selected-trains-from-sunday-12-august-to-wednesday-15-august-2018"
         assert subject.disruption.description == "Road coaches replace selected evening trains on the Seymour line from Sunday 12 August to Wednesday 15 August 2018, due to Metro track works."

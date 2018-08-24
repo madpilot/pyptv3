@@ -393,7 +393,7 @@ class TestDeparturesResponse:
         route = subject.routes["14"]
 
         assert route.type == TRAIN
-        assert route.id == 14
+        assert route.route_id == 14
         assert route.name == "Sunbury"
         assert route.number == ""
         assert route.gtfs_id == "2-SYM"
@@ -433,7 +433,7 @@ class TestDeparturesResponse:
         assert subject.disruptions["142498"].__class__ == DisruptionResponse
         disruption = subject.disruptions["142498"]
 
-        assert disruption.id == 142498
+        assert disruption.disruption_id == 142498
         assert disruption.title == "Frankston line stations: Temporary car park closures and changes to pedestrian access until late-2018"
         assert disruption.url == "http://ptv.vic.gov.au/live-travel-updates/article/frankston-line-stations-temporary-car-park-closures-and-changes-to-pedestrian-access-until-late-2018"
         assert disruption.description == "There will be full and partial temporary long-term and short-term closures of station car parks and changes to pedestrian access in and around stations on the Frankston line, due to works as part of the Level Crossing Removal Project."
@@ -444,7 +444,7 @@ class TestDeparturesResponse:
         assert disruption.from_date == datetime.datetime(2018, 7, 10, 1, 16, 0)
         assert disruption.to_date == datetime.datetime(2018, 12, 30, 16, 0, 0)
         assert disruption.routes[0].type == TRAIN
-        assert disruption.routes[0].id == 6
+        assert disruption.routes[0].route_id == 6
         assert disruption.routes[0].name == "Frankston"
         assert disruption.routes[0].number == ""
         assert disruption.routes[0].gtfs_id == "2-FKN"

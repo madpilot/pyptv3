@@ -61,7 +61,7 @@ class TestOutletsGeolocationResponse:
         assert subject[0].__class__ == OutletGeolocationResponse
 
         assert subject.outlets[0].distance == 1000
-        assert subject.outlets[0].id == "814"
+        assert subject.outlets[0].outlet_id == "814"
         assert subject.outlets[0].name == "3/67-69 Separation Street"
         assert subject.outlets[0].business == "7-Eleven Geelong North"
         assert subject.outlets[0].latitude == -38.1110878
@@ -78,7 +78,7 @@ class TestOutletsGeolocationResponse:
         assert subject.outlets[0].notes == None
 
         assert subject.outlets[1].distance == 2000
-        assert subject.outlets[1].id == "815"
+        assert subject.outlets[1].outlet_id == "815"
         assert subject.outlets[1].name == "115 Moorabool Street"
         assert subject.outlets[1].business == "7-Eleven Geelong City"
         assert subject.outlets[1].latitude == -38.1483879

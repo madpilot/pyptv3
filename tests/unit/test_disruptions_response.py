@@ -319,7 +319,7 @@ class TestDisruptionsResponse:
         assert subject["metro_train"][0].__class__ == DisruptionResponse
         disruption = subject["metro_train"][0]
 
-        assert disruption.id == 145833
+        assert disruption.disruption_id == 145833
         assert disruption.title == "The 8:44am Blackburn to Flinders Street service will terminate at Mont Albert due to a train fault. The next city bound service will depart from Mont Albert at 9:04am. The 9:09am Blackburn to Flinders Street service will originate from Box Hill this morning at 9:14am."
         assert disruption.url == "http://ptv.vic.gov.au/live-travel-updates/"
         assert disruption.description == "The 8:44am Blackburn to Flinders Street service will terminate at Mont Albert due to a train fault. The next city bound service will depart from Mont Albert at 9:04am. The 9:09am Blackburn to Flinders Street service will originate from Box Hill this morning at 9:14am."
@@ -338,7 +338,7 @@ class TestDisruptionsResponse:
         assert subject["metro_train"][0].__class__ == DisruptionResponse
         disruption = subject["metro_train"][0]
 
-        assert disruption.id == 145833
+        assert disruption.disruption_id == 145833
         assert disruption.title == "The 8:44am Blackburn to Flinders Street service will terminate at Mont Albert due to a train fault. The next city bound service will depart from Mont Albert at 9:04am. The 9:09am Blackburn to Flinders Street service will originate from Box Hill this morning at 9:14am."
         assert disruption.url == "http://ptv.vic.gov.au/live-travel-updates/"
         assert disruption.description == "The 8:44am Blackburn to Flinders Street service will terminate at Mont Albert due to a train fault. The next city bound service will depart from Mont Albert at 9:04am. The 9:09am Blackburn to Flinders Street service will originate from Box Hill this morning at 9:14am."
@@ -360,12 +360,12 @@ class TestDisruptionsResponse:
         route = disruption.routes[0]
 
         assert route.type == TRAIN
-        assert route.id == 2
+        assert route.route_id == 2
         assert route.name == "Belgrave"
         assert route.number == ""
         assert route.gtfs_id == "2-BEL"
         assert route.direction.route_direction_id == 20
-        assert route.direction.id == 1
+        assert route.direction.direction_id == 1
         assert route.direction.name == "City (Flinders Street)"
         assert route.direction.service_time == None
 
@@ -386,7 +386,7 @@ class TestDisruptionsResponse:
         assert subject["metro_tram"][0].__class__ == DisruptionResponse
         disruption = subject["metro_tram"][0]
 
-        assert disruption.id == 143887
+        assert disruption.disruption_id == 143887
         assert disruption.title == "Route 1: Temporary tram stop closure from Monday 23 July to late September 2018 "
         assert disruption.url == "http://ptv.vic.gov.au/live-travel-updates/article/route-1-temporary-tram-stop-closure-from-monday-23-july-to-late-september-2018"
         assert disruption.description == "Route 1 trams (to South Melbourne) will not service the following stop from first service on Monday 23 July 2018 until late September 2018 due to tram infrastructure works on Sturt Street and on Southbank Boulevard."
@@ -405,7 +405,7 @@ class TestDisruptionsResponse:
         assert subject["metro_bus"][0].__class__ == DisruptionResponse
         disruption = subject["metro_bus"][0]
 
-        assert disruption.id == 145839
+        assert disruption.disruption_id == 145839
         assert disruption.title == "Minor Delays to 10 min : Route: 382 Whittlesea - Northland SC via South Morang Station : to Whittlesea"
         assert disruption.url == "http://ptv.vic.gov.au/live-travel-updates/"
         assert disruption.description == "Minor Delays to 10 min : Route: 382 Whittlesea - Northland SC via South Morang Station : to Whittlesea"
@@ -424,7 +424,7 @@ class TestDisruptionsResponse:
         assert subject["regional_train"][0].__class__ == DisruptionResponse
         disruption = subject["regional_train"][0]
 
-        assert disruption.id == 144252
+        assert disruption.disruption_id == 144252
         assert disruption.title == "Seymour line: Coaches replacing selected trains from Sunday 12 August to Wednesday 15 August 2018"
         assert disruption.url == "http://ptv.vic.gov.au/live-travel-updates/article/seymour-and-shepparton-lines-coaches-replacing-selected-trains-from-sunday-12-august-to-wednesday-15-august-2018"
         assert disruption.description == "Road coaches replace selected evening trains on the Seymour line from Sunday 12 August to Wednesday 15 August 2018, due to Metro track works."

@@ -113,7 +113,7 @@ class TestSearchResponse:
         assert len(subject.outlets) == 1
         assert subject.outlets.__class__ == OutletsGeolocationResponse
         assert subject.outlets[0].distance == 0
-        assert subject.outlets[0].id == "20022"
+        assert subject.outlets[0].outlet_id == "20022"
         assert subject.outlets[0].name == "Corner Ashley Street and Sunshine Road"
         assert subject.outlets[0].business == "Tottenham Station"
         assert subject.outlets[0].latitude == -37.79926
@@ -136,7 +136,7 @@ class TestSearchResponse:
         assert subject.routes[0].name == "Dandenong - Endeavour Hills via Thomas Mitchell Drive"
         assert subject.routes[0].number == "861"
         assert subject.routes[0].type == BUS
-        assert subject.routes[0].id == 5335
+        assert subject.routes[0].route_id == 5335
         assert subject.routes[0].gtfs_id == "4-861"
 
     def test_status(self, response):
