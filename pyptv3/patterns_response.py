@@ -1,6 +1,10 @@
+""" Provides the PatternsResponse Class """
 import pyptv3
 
-class PatternsResponse:
+class PatternsResponse: # pylint: disable=line-too-long,unnecessary-lambda
+    """
+        Wraps the response from a Patterns request
+    """
     def __init__(self, response):
         self._departures = list(map(lambda d: pyptv3.DepartureResponse(d), response["departures"]))
 
@@ -14,37 +18,54 @@ class PatternsResponse:
 
     @property
     def departures(self):
+        """
+        Disruption information applicable to relevant routes or stops
+        """
         return self._departures
 
     @property
     def stops(self):
+        """
+        A train station, tram stop, bus stop, regional coach stop or Night Bus stop
+        """
         return self._stops
 
 
     @property
     def routes(self):
+        """
+        Train lines, tram routes, bus routes, regional coach routes, Night Bus routes
+        """
         return self._routes
 
     @property
     def runs(self):
+        """
+        Individual trips/services of a route
+        """
         return self._runs
 
     @property
     def directions(self):
+        """
+        Directions of travel of route
+        """
         return self._directions
 
     @property
     def disruptions(self):
+        """
+        Disruption information applicable to relevant routes or stops
+        """
         return self._disruptions
 
-    @property
-    def departures(self):
-        return self._departures
 
     @property
     def status(self):
+        """
+        API Status / Metadata
+        """
         return self._status
 
     def __repr__(self):
         return "<Patterns departures:%r stops:%r routes:%r runs:%r directions:%r disruptions:%r status:%r>" %(self.departures, self.stops, self.routes, self.runs, self.directions, self.disruptions, self.status)
-
